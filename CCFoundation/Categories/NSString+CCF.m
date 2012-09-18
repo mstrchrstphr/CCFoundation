@@ -49,7 +49,7 @@
     return YES;
 }
 
-+ (NSString *)timeStringForSeconds:(int)seconds
++ (NSString *)stringForTimeInSeconds:(int)seconds
 {
     int totalHours, totalMinutes, displayedMinutes, displayedSeconds;
     displayedSeconds = seconds % 60;
