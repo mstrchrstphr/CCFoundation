@@ -15,3 +15,4 @@
 #import "UIImageView+CCF.h"
 #import "UITextField+CCF.h"
 #import "UIView+CCF.h"
+#import "UIDevice+CCF.h"
