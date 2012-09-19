@@ -8,12 +8,8 @@
 @interface UIView (CCF)
 
 /**
- This simply returns a view's UIViewController.
+ Returns a view's UIViewController.
  Taken from http://stackoverflow.com/a/3732812/55310
- 
- Thanks to Brock and Phil
- http://stackoverflow.com/users/311466/brock
- http://stackoverflow.com/users/450263/phil-m
  */
 - (UIViewController *)firstAvailableUIViewControllerOfType:(Class)type;
 

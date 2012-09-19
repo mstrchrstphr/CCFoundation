@@ -7,7 +7,10 @@
 
 @interface NSString (CCF)
 
-- (BOOL)isValidateEmail;
+/**
+ Checks if the string to see if it LOOKS like an email. 
+ */
+- (BOOL)isValidEmail;
 - (BOOL)doesContainUppercase;
 - (BOOL)doesContainLowercase;
 - (BOOL)doesContainNumber;
