@@ -1,4 +1,4 @@
 CCFoundation
 ============
 
-Categories, utilities, and a little magic.
+Some simple categories and utilities. Nothing fancy :)
