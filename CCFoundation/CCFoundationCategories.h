@@ -13,6 +13,8 @@
 #import "UIBarButtonItem+CCF.h"
 #import "UIColor+CCF.h"
 #import "UIImageView+CCF.h"
+#import "UILabel+CCF.h"
+#import "UITextView+CCF.h"
 #import "UITextField+CCF.h"
 #import "UIView+CCF.h"
 #import "UIDevice+CCF.h"
