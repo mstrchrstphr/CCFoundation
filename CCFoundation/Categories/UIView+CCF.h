@@ -13,4 +13,14 @@
  */
 - (UIViewController *)firstAvailableUIViewControllerOfType:(Class)type;
 
+/**
+ Displays a "loading" view in the middle of the calling view.
+ */
+- (void)showLoadingViewWithTitle:(NSString *)title;
+
+/**
+ Hides the loading view (if there is one).
+ */
+- (void)hideLoadingView;
+
 @end
