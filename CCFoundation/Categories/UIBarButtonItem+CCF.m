@@ -18,7 +18,8 @@
 	CGRect imageFrame = CGRectZero;
 	imageFrame.size = normalImage.size;
 	
-	UIButton *innerButton = [[UIButton alloc] initWithFrame:imageFrame];	
+	UIButton *innerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    innerButton.frame = imageFrame;
 	[innerButton addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
     [innerButton setImage:normalImage forState:UIControlStateNormal];
     [innerButton setImage:highlightedImage forState:UIControlStateHighlighted];
