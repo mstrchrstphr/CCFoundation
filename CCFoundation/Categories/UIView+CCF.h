@@ -23,4 +23,12 @@
  */
 - (void)hideLoadingView;
 
+/**
+ CGRect methods.
+ */
+- (void)setFrameX:(CGFloat)xVal;
+- (void)setFrameY:(CGFloat)yVal;
+- (void)setFrameHeight:(CGFloat)height;
+- (void)setFrameWidth:(CGFloat)width;
+
 @end

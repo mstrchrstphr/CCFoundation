@@ -104,4 +104,32 @@ static char loadingViewAssociationKey;
     }
 }
 
+- (void)setFrameX:(CGFloat)xVal
+{
+    CGRect currentFrame = self.frame;
+    currentFrame.origin.x = xVal;
+    self.frame = currentFrame;
+}
+
+- (void)setFrameY:(CGFloat)yVal
+{
+    CGRect currentFrame = self.frame;
+    currentFrame.origin.x = yVal;
+    self.frame = currentFrame;
+}
+
+- (void)setFrameHeight:(CGFloat)height
+{
+    CGRect currentFrame = self.frame;
+    currentFrame.size.height = height;
+    self.frame = currentFrame;
+}
+
+- (void)setFrameWidth:(CGFloat)width
+{
+    CGRect currentFrame = self.frame;
+    currentFrame.size.width = width;
+    self.frame = currentFrame;
+}
+
 @end
