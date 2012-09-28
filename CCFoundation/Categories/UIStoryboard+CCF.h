@@ -19,4 +19,6 @@
  */
 + (id)instantiateViewControllerForCurrentDeviceWithIdentifier:(NSString *)identifier;
 
++ (id)instantiateInitialViewControllerForCurrentDevice;
+
 @end
