@@ -31,4 +31,23 @@
 	return barButtonItem;
 }
 
++ (NSArray *)barButtonItemWithUnpaddedImage:(UIImage *)normalImage
+                           highlightedImage:(UIImage *)highlightedImage
+                                     target:(id)target
+                                   selector:(SEL)selector
+{
+    NSMutableArray *barItems = [NSMutableArray array];
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    negativeSpacer.width = -5;
+    [barItems addObject:negativeSpacer];
+    [barItems addObject:[UIBarButtonItem barButtonItemWithImage:normalImage
+                                                   highlightedImage:highlightedImage
+                                                             target:target selector:selector]];
+    [barItems addObject:negativeSpacer];
+    
+    return barItems;
+}
+
 @end
