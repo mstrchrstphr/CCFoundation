@@ -7,6 +7,12 @@
 
 #import "CCLocationManager.h"
 
+NSString *const CCLMNotificationLocationChanged = @"CCLM:LocationChangedNotification";
+
+@interface CCLocationManager ()
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@end
+
 @implementation CCLocationManager
 
 + (CCLocationManager *)sharedLocationManager
@@ -20,7 +26,7 @@
     return locationMgr;
 }
 
-- (void)beginTrackingUserLocation
+- (void)startTrackingUserLocation
 {
     if ([CLLocationManager locationServicesEnabled] == NO) {
         return;
@@ -39,7 +45,7 @@
     // Set initial location if available
     CLLocation *currentLocation = self.locationManager.location;
     if (currentLocation) {
-        self.currentLocation = currentLocation;
+        _currentLocation = currentLocation;
     }
 }
 
@@ -50,11 +56,13 @@
     }
 }
 
-- (void)setCurrentLocation:(CLLocation *)aCurrentLocation
+- (void)setCurrentLocation:(CLLocation *)currentLocation
 {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject: aCurrentLocation
+    _currentLocation = currentLocation;
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:_currentLocation
                                                          forKey:@"location"];
-    [[NSNotificationCenter defaultCenter] postNotificationName: kCCLocationManagerChangeNotification
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:CCLMNotificationLocationChanged
                                                         object:nil
                                                       userInfo:userInfo];
 }
@@ -63,6 +71,9 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    if (self.currentLocation) {
+        _previousLocation = self.currentLocation;
+    }
     self.currentLocation = newLocation;
     NSLog(@"CCLocationManager got new location: latitude %+.6f, longitude %+.6f\n",
           newLocation.coordinate.latitude,

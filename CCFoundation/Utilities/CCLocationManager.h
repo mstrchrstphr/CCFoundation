@@ -9,16 +9,16 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-static NSString* const kCCLocationManagerChangeNotification= @"kCCLocationManagerChangeNotification";
+extern NSString *const CCLMNotificationLocationChanged;
 
 @interface CCLocationManager : NSObject <CLLocationManagerDelegate>
 
-@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, readonly) CLLocation *currentLocation;
+@property (nonatomic, readonly) CLLocation *previousLocation;
 
 + (CCLocationManager *)sharedLocationManager;
 
-- (void)beginTrackingUserLocation;
+- (void)startTrackingUserLocation;
 - (void)stopTrackingUserLocation;
-- (void)setCurrentLocation:(CLLocation *)aCurrentLocation;
 
 @end
