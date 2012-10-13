@@ -50,4 +50,34 @@
     return barItems;
 }
 
++ (NSArray *)barButtonItemWithImage:(UIImage *)normalImage
+                   highlightedImage:(UIImage *)highlightedImage
+                             target:(id)target
+                           selector:(SEL)selector
+                         andPadding:(NSInteger)spacerWidth
+                             onSide:(BarButtonSide)side
+{
+    NSMutableArray *barItems = [NSMutableArray array];
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    spacer.width = spacerWidth;
+    
+    if ((side == BarButtonSideLeft) ||
+        (side == BarButtonSideRight)) {
+        [barItems addObject:spacer];
+    }
+
+    
+    [barItems addObject:[UIBarButtonItem barButtonItemWithImage:normalImage
+                                               highlightedImage:highlightedImage
+                                                         target:target selector:selector]];
+    
+    if (side == BarButtonSideRight) {
+        [barItems addObject:spacer];
+    }
+    
+    return barItems;
+}
+
 @end
