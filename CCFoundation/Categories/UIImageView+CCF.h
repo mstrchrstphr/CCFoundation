@@ -10,4 +10,7 @@
 /** Creates an UIImageView from a UIImage name. */
 + (UIImageView *)imageViewWithImageNamed:(NSString *)imageName;
 
+- (void)startRotatingWithSpeed:(CGFloat)secondsPerRotation;
+- (void)stopRotating;
+
 @end
