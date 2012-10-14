@@ -8,6 +8,7 @@
 /** Imports all CCFoundation categories. */
 
 #import "NSArray+CCF.h"
+#import "NSMutableArray+CCF.h"
 #import "NSDictionary+CCF.h"
 #import "NSString+CCF.h"
 #import "UIBarButtonItem+CCF.h"

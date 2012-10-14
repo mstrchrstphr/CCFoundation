@@ -10,4 +10,6 @@
 
 @interface NSMutableArray (CCF)
 
+- (void)shuffle;
+
 @end
