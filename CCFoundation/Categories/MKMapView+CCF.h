@@ -10,4 +10,6 @@
 
 @interface MKMapView (CCF)
 
+- (void)centerMapOnAnnotations;
+
 @end

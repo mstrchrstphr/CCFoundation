@@ -20,3 +20,4 @@
 #import "UIView+CCF.h"
 #import "UIDevice+CCF.h"
 #import "UIStoryboard+CCF.h"
+#import "MKMapView+CCF.h"

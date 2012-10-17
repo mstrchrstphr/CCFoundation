@@ -24,6 +24,12 @@
 - (void)hideLoadingView;
 
 /**
+ Creates a drop shadow around the view.
+ TODO: Make drop shadow configurable.
+ */
+- (void)drawDropShadow;
+
+/**
  CGRect methods.
  */
 - (void)setFrameX:(CGFloat)xVal;

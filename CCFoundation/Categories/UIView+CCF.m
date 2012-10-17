@@ -104,6 +104,17 @@ static char loadingViewAssociationKey;
     }
 }
 
+- (void)drawDropShadow
+{
+    UIBezierPath *path  = [UIBezierPath bezierPathWithRect:self.bounds];
+    self.layer.shadowPath = [path CGPath];
+    
+    self.layer.shadowColor    = [[UIColor lightGrayColor] CGColor];
+    self.layer.shadowOffset   = CGSizeMake(1, 1);
+    self.layer.shadowOpacity  = 1.0;
+    self.layer.shadowRadius   = 3.0;
+}
+
 - (void)setFrameX:(CGFloat)xVal
 {
     CGRect currentFrame = self.frame;
