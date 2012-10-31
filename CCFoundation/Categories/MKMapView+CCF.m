@@ -22,7 +22,13 @@
     
     // Find the "corners" of the box that contains all of our locations by finding the max and min
     // longitude and latitudes.
-    for(MKPointAnnotation* curAnnotation in self.annotations) {
+    for(MKPointAnnotation *curAnnotation in self.annotations) {
+        
+        // Skip the user
+        if (curAnnotation == (MKPointAnnotation *)self.userLocation) {
+            continue;
+        }
+        
         CLLocationCoordinate2D curCoordinates = curAnnotation.coordinate;
         if(curCoordinates.latitude > upperBounds.latitude) {
             upperBounds.latitude = curCoordinates.latitude;
