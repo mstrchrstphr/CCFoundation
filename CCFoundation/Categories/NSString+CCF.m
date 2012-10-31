@@ -49,6 +49,12 @@
     return YES;
 }
 
+- (BOOL)isNotEmpty
+{
+    NSString *trimmed = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return ![trimmed isEqualToString:@""];
+}
+
 + (NSString *)stringForTimeInSeconds:(int)seconds
 {
     int totalHours, totalMinutes, displayedMinutes, displayedSeconds;
