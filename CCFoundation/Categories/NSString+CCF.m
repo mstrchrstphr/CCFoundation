@@ -81,4 +81,13 @@
     return [NSString stringWithFormat:@"%4.1f %@", rawValue, [suffixTokens objectAtIndex:multiplyFactor]];
 }
 
+- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding
+{
+	return (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                               (CFStringRef)self,
+                                                               NULL,
+                                                               (CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
+                                                               CFStringConvertNSStringEncodingToEncoding(encoding));
+}
+
 @end

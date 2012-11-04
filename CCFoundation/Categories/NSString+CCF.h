@@ -25,5 +25,6 @@
  Given some bytes returns something like 102.95 KB or 5.0 GB. Rounds to two decimal places.
  */
 + (NSString *)stringRepresentationOfNumberOfBytes:(uint64_t)numOfBytes;
+- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
 
 @end
