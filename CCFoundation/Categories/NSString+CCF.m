@@ -90,4 +90,23 @@
                                                                CFStringConvertNSStringEncodingToEncoding(encoding));
 }
 
+- (NSString *)humanReadableViewControllerName
+{
+    NSString *originalNameSanitized = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    originalNameSanitized = [originalNameSanitized stringByReplacingOccurrencesOfString:@"ViewController" withString:@"Screen"];
+    NSString *readableName = [originalNameSanitized substringWithRange:NSMakeRange(0, 1)];
+    
+    for (int i = 1; i < [originalNameSanitized length]; i++) {
+        BOOL isUppercase = [[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:[originalNameSanitized characterAtIndex:i]];
+        if (isUppercase) {
+            readableName = [readableName stringByAppendingString:[NSString stringWithFormat:@" %@", [originalNameSanitized substringWithRange:NSMakeRange(i, 1)]]];
+        }
+        else {
+            readableName = [readableName stringByAppendingString:[originalNameSanitized substringWithRange:NSMakeRange(i, 1)]];
+        }
+    }
+    
+    return readableName;
+}
+
 @end

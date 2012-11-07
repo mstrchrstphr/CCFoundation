@@ -27,4 +27,10 @@
 + (NSString *)stringRepresentationOfNumberOfBytes:(uint64_t)numOfBytes;
 - (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
 
+/**
+ Converts "programmer" view controller names to "non-programmer" name.
+ e.g. "HomeViewController" to "Home Screen"
+ */
+- (NSString *)humanReadableViewControllerName;
+
 @end
