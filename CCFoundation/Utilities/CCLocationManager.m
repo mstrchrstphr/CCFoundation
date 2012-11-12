@@ -71,6 +71,9 @@ NSString *const CCLMNotificationLocationChanged = @"CCLM:LocationChangedNotifica
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
+    // Throw out old locations
+    if ([newLocation.timestamp timeIntervalSinceNow] < -60) return;
+    
     if (self.currentLocation) {
         _previousLocation = self.currentLocation;
     }
