@@ -143,4 +143,19 @@ static char loadingViewAssociationKey;
     self.frame = currentFrame;
 }
 
+- (void)disableScrollsToTopForAllSubviews
+{
+    [self disableScrollsToTopForAllSubviewsInView:self];
+}
+
+- (void)disableScrollsToTopForAllSubviewsInView:(UIView *)view
+{
+    for (UIView *subview in view.subviews) {
+        if ([subview isKindOfClass:[UIScrollView class]]) {
+            ((UIScrollView *)subview).scrollsToTop = NO;
+        }
+        [self disableScrollsToTopForAllSubviewsInView:subview];
+    }
+}
+
 @end

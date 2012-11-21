@@ -37,4 +37,12 @@
 - (void)setFrameHeight:(CGFloat)height;
 - (void)setFrameWidth:(CGFloat)width;
 
+/**
+ Adding multiple scroll views to the screen will disable the "auto scroll to top"
+ feature that many users are used to when tapping the status bar. This method solves
+ the issue by setting all scrollsToTop of the view to NO so you can explicitly set
+ which view you want to get that behaviour.
+ */
+- (void)disableScrollsToTopForAllSubviews;
+
 @end
