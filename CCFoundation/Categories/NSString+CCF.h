@@ -15,6 +15,7 @@
 - (BOOL)doesContainLowercase;
 - (BOOL)doesContainNumber;
 - (BOOL)isNotEmpty;
+- (BOOL)isEmptyOrNil;
 
 /**
  Returns a time string in the format of HH:MM:SS given a number of seconds.
