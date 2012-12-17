@@ -52,7 +52,9 @@ NSString *const CCLMNotificationLocationChanged = @"CCLM:LocationChangedNotifica
 - (void)stopTrackingUserLocation
 {
     if (self.locationManager) {
+        [self.locationManager stopUpdatingHeading];
         [self.locationManager stopUpdatingLocation];
+        [self.locationManager stopMonitoringSignificantLocationChanges];
     }
 }
 
