@@ -29,6 +29,13 @@
 - (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
 
 /**
+ Returns a dictionary of parameters parsed from the URL of the current string.
+ NOTE: only the string should only be query/path should and not the full
+ url.
+ */
+- (NSDictionary *)dictionaryFromURLParameters;
+
+/**
  Converts "programmer" view controller names to "non-programmer" name.
  e.g. "HomeViewController" to "Home Screen"
  */
