@@ -14,7 +14,7 @@
     CGFloat oldLabelHeight = self.frame.size.height;
     CGSize maxLabelSize = CGSizeMake(self.frame.size.width, 9999.0);
     
-    CGSize adjustedLabelSize = [text sizeWithFont:self.font constrainedToSize:maxLabelSize lineBreakMode:UILineBreakModeWordWrap];
+    CGSize adjustedLabelSize = [text sizeWithFont:self.font constrainedToSize:maxLabelSize lineBreakMode:NSLineBreakByWordWrapping];
     CGRect newLabelFrame = CGRectMake(self.frame.origin.x, self.frame.origin.y, adjustedLabelSize.width, maxHeight);
     self.frame = newLabelFrame;
     [self setText:text];
