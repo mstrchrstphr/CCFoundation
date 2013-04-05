@@ -8,6 +8,18 @@
 @interface NSString (CCF)
 
 /**
+ Gets the integer value of a string and increments it by 1 and
+ then writes it back to the string.
+ */
+- (NSString *)incrementIntegerValue;
+
+/**
+ Gets the integer value of a string and increments it by 1 and
+ then writes it back to the string.
+ */
+- (NSString *)decrementIntegerValue;
+
+/**
  Checks if the string to see if it LOOKS like an email. 
  */
 - (BOOL)isValidEmail;
