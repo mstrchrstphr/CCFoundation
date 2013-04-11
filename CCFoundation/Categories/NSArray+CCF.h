@@ -8,6 +8,11 @@
 @interface NSArray (CCF)
 
 /**
+ Returns a random object.
+ */
+- (id)anyObject;
+
+/**
  Does no throw exceptions for index out of bounds but instead, returns a nil value.
  */
 - (id)safeObjectAtIndex:(NSInteger)index;
