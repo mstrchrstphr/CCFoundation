@@ -1,9 +1,7 @@
 //
 //  UIViewController+CCF.m
-//  Pods
 //
 //  Created by Christopher Constable on 4/8/13.
-//
 //
 
 #import "UIViewController+CCF.h"
@@ -30,7 +28,8 @@
     }
     
     // Sort appropriately
-    if (animation == UIViewControllerTagAnimationsFadeInAscending) {
+    if ((animation == UIViewControllerTagAnimationsFadeInAscending) ||
+        (animation == UIViewControllerTagAnimationsFadeOutAscending)) {
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"tag" ascending:YES];
         taggedViews = [[taggedViews sortedArrayUsingDescriptors:@[sortDescriptor]] mutableCopy];
     }
@@ -42,38 +41,70 @@
     if (animation == UIViewControllerTagAnimationsFadeInAscending) {
         for (UIView *view in taggedViews) {
             view.alpha = 0.0f;
+            view.hidden = NO;
         }
         
         CGFloat animationDelay = 0.0f;
-        for (UIView *view in taggedViews) {
-            [UIView animateWithDuration:0.5f
-                                  delay:animationDelay
-                                options:UIViewAnimationOptionCurveEaseIn
-                             animations:^{
-                                 view.alpha = 1.0f;
-                             } completion:^(BOOL finished) {
-                                 
-                             }];
-            animationDelay += 0.3f;
+        CGFloat animationDelayIncrement = 0.1f / taggedViews.count;
+        for (int currentIndex = 0; currentIndex < taggedViews.count; currentIndex++) {
+            __block UIView *view = [taggedViews objectAtIndex:currentIndex];
+            if (currentIndex != (taggedViews.count - 1)) {
+                [UIView animateWithDuration:0.2f
+                                      delay:animationDelay
+                                    options:UIViewAnimationOptionCurveEaseIn
+                                 animations:^{
+                                     view.alpha = 1.0f;
+                                 } completion:nil];
+            }
+            else {
+                [UIView animateWithDuration:0.4f
+                                      delay:animationDelay
+                                    options:UIViewAnimationOptionCurveEaseIn
+                                 animations:^{
+                                     view.alpha = 1.0f;
+                                 } completion:^(BOOL finished) {
+                                     if (completionBlock) {
+                                         completionBlock();
+                                     }
+                                 }];
+            }
+            
+            animationDelay += animationDelayIncrement;
         }
     }
     
-    else if (animation == UIViewControllerTagAnimationsFadeOutAsceding) {
+    else if (animation == UIViewControllerTagAnimationsFadeOutAscending) {
         for (UIView *view in taggedViews) {
             view.alpha = 1.0f;
+            view.hidden = NO;
         }
         
         CGFloat animationDelay = 0.0f;
-        for (UIView *view in taggedViews) {
-            [UIView animateWithDuration:0.5f
-                                  delay:animationDelay
-                                options:UIViewAnimationOptionCurveEaseIn
-                             animations:^{
-                                 view.alpha = 0.0f;
-                             } completion:^(BOOL finished) {
-                                 
-                             }];
-            animationDelay += 0.3f;
+        CGFloat animationDelayIncrement = 0.1f / taggedViews.count;
+        for (int currentIndex = 0; currentIndex < taggedViews.count; currentIndex++) {
+            UIView *view = [taggedViews objectAtIndex:currentIndex];
+            if (currentIndex != (taggedViews.count - 1)) {
+                [UIView animateWithDuration:0.1f
+                                      delay:animationDelay
+                                    options:UIViewAnimationOptionCurveEaseIn
+                                 animations:^{
+                                     view.alpha = 0.0f;
+                                 } completion:nil];
+            }
+            else {
+                [UIView animateWithDuration:0.4f
+                                      delay:animationDelay
+                                    options:UIViewAnimationOptionCurveEaseIn
+                                 animations:^{
+                                     view.alpha = 0.0f;
+                                 } completion:^(BOOL finished) {
+                                     if (completionBlock) {
+                                         completionBlock();
+                                     }
+                                 }];
+            }
+            
+            animationDelay += animationDelayIncrement;
         }
     }
 }
