@@ -158,4 +158,42 @@ static char loadingViewAssociationKey;
     }
 }
 
+- (void)dimTheLights
+{
+    [self dimTheLightsWithOpacity:0.4];
+}
+
+- (void)dimTheLightsWithOpacity:(CGFloat)opacity
+{
+    __block UIView *dimmer = [[UIView alloc] initWithFrame:self.bounds];
+    dimmer.userInteractionEnabled = NO;
+    dimmer.tag = 80139587498; // random tag
+    dimmer.backgroundColor = [UIColor blackColor];
+    dimmer.alpha = 0.0;
+    [self addSubview:dimmer];
+    [self bringSubviewToFront:dimmer];
+    
+    [UIView animateWithDuration:0.3
+                          delay:0.0
+                        options:0
+                     animations:^{
+                         dimmer.alpha = opacity;
+                     } completion:nil];
+}
+
+- (void)turnTheLightsBackOn
+{
+    __block UIView *dimmer = [self viewWithTag:80139587498];
+    if (dimmer) {
+        [UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:0
+                         animations:^{
+                             dimmer.alpha = 0.0;
+                         } completion:^(BOOL finished) {
+                             [dimmer removeFromSuperview];
+                         }];
+    }
+}
+
 @end

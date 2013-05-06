@@ -45,4 +45,11 @@
  */
 - (void)disableScrollsToTopForAllSubviews;
 
+/**
+ Dims the lights
+ */
+- (void)dimTheLights;
+- (void)dimTheLightsWithOpacity:(CGFloat)opacity;
+- (void)turnTheLightsBackOn;
+
 @end
