@@ -9,7 +9,36 @@
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
 
+static char tagObjectAssociationKey;
+static char loadingViewAssociationKey;
+
 @implementation UIView (CCF)
+
+@dynamic tagObject;
+
+- (id)tagObject {
+    return objc_getAssociatedObject(self, &tagObjectAssociationKey);
+}
+
+- (void)setTagObject:(id)tagObject {
+    objc_setAssociatedObject(self, &tagObjectAssociationKey, tagObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
+- (UIView *)viewWithTagObject:(id)object
+{
+    if (!object) {
+        return nil;
+    }
+    
+    for (UIView *subview in self.subviews) {
+        UIView *resultView = [subview viewWithTagObject:object];
+        if (resultView) {
+            return resultView;
+        }
+    }
+    return nil;
+}
 
 - (id)traverseResponderChainForUIViewControllerOfType:(Class)type {
     id nextResponder = [self nextResponder];
@@ -25,9 +54,6 @@
 - (UIViewController *)firstAvailableUIViewControllerOfType:(Class)type {
     return (UIViewController *)[self traverseResponderChainForUIViewControllerOfType:type];
 }
-
-// Used for the "loading view" methods below.
-static char loadingViewAssociationKey;
 
 /**
  Displays a "loading view" in the middle of the calling view.

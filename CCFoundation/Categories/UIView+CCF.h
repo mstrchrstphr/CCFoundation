@@ -8,6 +8,17 @@
 @interface UIView (CCF)
 
 /**
+ Replacement for the default "tag" property of UIView. Allows for
+ an arbitrary object to be set as the tag.
+ */
+@property (nonatomic, retain) id tagObject;
+
+/**
+ Retrieves the first view whose tag object matches the parameter.
+ */
+- (UIView *)viewWithTagObject:(id)object;
+
+/**
  Returns a view's UIViewController.
  Taken from http://stackoverflow.com/a/3732812/55310
  */
