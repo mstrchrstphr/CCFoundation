@@ -141,6 +141,39 @@ static char loadingViewAssociationKey;
     self.layer.shadowRadius   = 3.0;
 }
 
+- (void)fadeOutWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock
+{
+    [UIView animateWithDuration:0.3
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.alpha = 0.0;
+                     }
+                     completion:^(BOOL finished) {
+                         self.hidden = YES;
+                         if (completionBlock) {
+                             completionBlock();
+                         }
+                     }];
+}
+
+- (void)fadeInWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock
+{
+    self.alpha = 0.0;
+    self.hidden = NO;
+    [UIView animateWithDuration:0.3
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         self.alpha = 1.0;
+                     }
+                     completion:^(BOOL finished) {
+                         if (completionBlock) {
+                             completionBlock();
+                         }
+                     }];
+}
+
 - (void)setFrameX:(CGFloat)xVal
 {
     CGRect currentFrame = self.frame;

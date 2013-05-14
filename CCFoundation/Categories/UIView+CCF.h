@@ -40,6 +40,12 @@
  */
 - (void)drawDropShadow;
 
+/** Fade out view. */
+- (void)fadeOutWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock;
+
+/** Fade in view. */
+- (void)fadeInWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock;
+
 /**
  CGRect methods.
  */
