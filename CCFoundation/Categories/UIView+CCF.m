@@ -184,7 +184,7 @@ static char loadingViewAssociationKey;
 - (void)setFrameY:(CGFloat)yVal
 {
     CGRect currentFrame = self.frame;
-    currentFrame.origin.x = yVal;
+    currentFrame.origin.y = yVal;
     self.frame = currentFrame;
 }
 
