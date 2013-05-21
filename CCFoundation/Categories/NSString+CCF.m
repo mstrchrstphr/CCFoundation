@@ -75,6 +75,11 @@
     return (([trimmed isEqualToString:@""]) || (trimmed == nil));
 }
 
+- (BOOL)containsString:(NSString *)string
+{
+    return ([self rangeOfString:string].location != NSNotFound);
+}
+
 + (NSString *)stringForTimeInSeconds:(int)seconds
 {
     int totalHours, totalMinutes, displayedMinutes, displayedSeconds;

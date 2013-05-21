@@ -23,11 +23,13 @@
  Checks if the string to see if it LOOKS like an email. 
  */
 - (BOOL)isValidEmail;
+
 - (BOOL)doesContainUppercase;
 - (BOOL)doesContainLowercase;
 - (BOOL)doesContainNumber;
 - (BOOL)isNotEmpty;
 - (BOOL)isEmptyOrNil;
+- (BOOL)containsString:(NSString *)string;
 
 /**
  Returns a time string in the format of HH:MM:SS given a number of seconds.
