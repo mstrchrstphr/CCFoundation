@@ -10,6 +10,9 @@
 /** Creates an UIImageView from a UIImage name. */
 + (UIImageView *)imageViewWithImageNamed:(NSString *)imageName;
 
+- (void)setImageWithBounce:(UIImage *)image;
+- (void)setImageWithBounce:(UIImage *)image withIntesity:(CGFloat)intesity;
+
 - (void)startRotatingWithSpeed:(CGFloat)secondsPerRotation;
 - (void)stopRotating;
 
