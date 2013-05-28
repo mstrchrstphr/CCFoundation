@@ -143,7 +143,7 @@ static char loadingViewAssociationKey;
 
 - (void)fadeOutWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock
 {
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:fadeInterval
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
@@ -161,7 +161,7 @@ static char loadingViewAssociationKey;
 {
     self.alpha = 0.0;
     self.hidden = NO;
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:fadeInterval
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
