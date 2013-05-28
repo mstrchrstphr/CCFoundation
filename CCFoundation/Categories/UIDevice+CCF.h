@@ -9,5 +9,6 @@
 
 + (BOOL)isIPhone;
 + (BOOL)isIPad;
++ (BOOL)isSimulator;
 
 @end

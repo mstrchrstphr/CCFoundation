@@ -7,6 +7,10 @@
 
 #import "UIDevice+CCF.h"
 
+#ifdef __APPLE__
+#include "TargetConditionals.h"
+#endif
+
 @implementation UIDevice (CCF)
 
 + (BOOL)isIPhone
@@ -17,6 +21,11 @@
 + (BOOL)isIPad
 {
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+}
+
++ (BOOL)isSimulator
+{
+    return TARGET_IPHONE_SIMULATOR;
 }
 
 @end
