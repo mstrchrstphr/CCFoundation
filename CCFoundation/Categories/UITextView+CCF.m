@@ -26,4 +26,9 @@
     return (self.frame.size.height - oldLabelHeight);
 }
 
+- (void)appendString:(NSString *)stringToAppend
+{
+    self.text = [self.text stringByAppendingString:stringToAppend];
+}
+
 @end

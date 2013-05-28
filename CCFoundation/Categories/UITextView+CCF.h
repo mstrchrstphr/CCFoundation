@@ -18,4 +18,6 @@
  */
 - (CGFloat)setText:(NSString *)text andExpandVerticallyUpTo:(CGFloat)maxHeight;
 
+- (void)appendString:(NSString *)stringToAppend;
+
 @end
