@@ -11,6 +11,7 @@
 #import "NSMutableArray+CCF.h"
 #import "NSDictionary+CCF.h"
 #import "NSData+CCF.h"
+#import "NSDate+CCF.h"
 #import "NSString+CCF.h"
 #import "UIBarButtonItem+CCF.h"
 #import "UIColor+CCF.h"
