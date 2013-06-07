@@ -24,3 +24,4 @@
 #import "UIStoryboard+CCF.h"
 #import "MKMapView+CCF.h"
 #import "UIViewController+CCF.h"
+#import "UINavigationController+CCF.h"
