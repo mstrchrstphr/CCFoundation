@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.author       = { "Christopher Constable" => "chris@futura.io" }
   s.source       = { :git => "https://github.com/mstrchrstphr/CCFoundation.git", :commit => "a996d0f60dbf6e31426919ca47070f99a7d54f99" }
   s.platform     = :ios, '5.0'
-  s.source_files = 'Classes', 'CCFoundation/**/*.{h,m}'
+  s.source_files = 'CCFoundation/**/*.{h,m}'
   s.frameworks  = 'MapKit', 'QuartzCore', 'CoreLocation'
   s.requires_arc = true
 end
