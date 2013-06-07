@@ -55,6 +55,17 @@ static char loadingViewAssociationKey;
     return (UIViewController *)[self traverseResponderChainForUIViewControllerOfType:type];
 }
 
+- (void)addTapGestureWithBlock:(void(^)())wasTappedBlock
+{
+    static int selectorId = 0;
+    NSString *selectorName = [NSString stringWithFormat:@"tapGestureSelector%d:",selectorId];
+    IMP implementation = imp_implementationWithBlock(wasTappedBlock);
+    SEL newSelector = @selector(selectorName);
+    class_addMethod([self class], newSelector, implementation, "v@:@");
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:newSelector];
+    [self addGestureRecognizer:tapGesture];
+}
+
 /**
  Displays a "loading view" in the middle of the calling view.
  */

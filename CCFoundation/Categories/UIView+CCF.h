@@ -24,6 +24,12 @@
  */
 - (UIViewController *)firstAvailableUIViewControllerOfType:(Class)type;
 
+
+/**
+ Adds a tap gesture with a block.
+ */
+- (void)addTapGestureWithBlock:(void(^)())wasTappedBlock;
+
 /**
  Displays a "loading" view in the middle of the calling view.
  */
