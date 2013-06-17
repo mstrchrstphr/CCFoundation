@@ -55,6 +55,13 @@ static char loadingViewAssociationKey;
     return (UIViewController *)[self traverseResponderChainForUIViewControllerOfType:type];
 }
 
+- (void)removeAllSubviews
+{
+    for (UIView *currentSubview in self.subviews) {
+        [currentSubview removeFromSuperview];
+    }
+}
+
 - (void)addTapGestureWithBlock:(void(^)())wasTappedBlock
 {
     static int selectorId = 0;

@@ -24,6 +24,10 @@
  */
 - (UIViewController *)firstAvailableUIViewControllerOfType:(Class)type;
 
+/**
+  Removes all subviews.
+ */
+- (void)removeAllSubviews;
 
 /**
  Adds a tap gesture with a block.
