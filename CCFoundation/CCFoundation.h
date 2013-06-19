@@ -11,3 +11,4 @@
 #import "CCDebug.h"
 #import "CCLocationManager.h"
 #import "CCDevice.h"
+#import "CCUnitConverter.h"
