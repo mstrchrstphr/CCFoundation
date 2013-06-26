@@ -23,6 +23,20 @@
     return [NSString stringWithFormat:@"%d", integerValue];
 }
 
+- (unsigned int)hexValue
+{
+    unsigned int hexResult = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:self];
+    
+    // Trim the # character
+    if ([self hasPrefix:@"#"]) {
+        [scanner setScanLocation:1]; 
+    }
+    
+    [scanner scanHexInt:&hexResult];
+    return hexResult;
+}
+
 - (BOOL)isValidEmail
 {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";

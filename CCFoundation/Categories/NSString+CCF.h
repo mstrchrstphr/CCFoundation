@@ -20,6 +20,11 @@
 - (NSString *)decrementIntegerValue;
 
 /**
+ Returns the hex value of the string.
+ */
+- (unsigned int)hexValue;
+
+/**
  Checks if the string to see if it LOOKS like an email. 
  */
 - (BOOL)isValidEmail;
