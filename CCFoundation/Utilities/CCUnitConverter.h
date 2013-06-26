@@ -16,4 +16,6 @@
 + (double)convertFahrenheitToCelsius:(double)fahrenheit;
 + (double)convertFeetToMeters:(double)feet;
 
++ (NSString *)convertDegreesToCompassHeading:(NSInteger)degrees;
+
 @end
