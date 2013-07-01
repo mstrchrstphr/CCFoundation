@@ -62,15 +62,24 @@ static char loadingViewAssociationKey;
     }
 }
 
-- (void)addTapGestureWithBlock:(void(^)())wasTappedBlock
+- (UITapGestureRecognizer *)addTapGestureWithBlock:(void(^)(UITapGestureRecognizer *tapGesture))wasTappedBlock
 {
     static int selectorId = 0;
     NSString *selectorName = [NSString stringWithFormat:@"tapGestureSelector%d:",selectorId];
-    IMP implementation = imp_implementationWithBlock(wasTappedBlock);
+    NSLog(selectorName);
+    IMP implementation = imp_implementationWithBlock(^void (UITapGestureRecognizer *tapGesture) {
+        if (wasTappedBlock) {
+            wasTappedBlock(tapGesture);
+        }
+    });
     SEL newSelector = @selector(selectorName);
     class_addMethod([self class], newSelector, implementation, "v@:@");
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:newSelector];
     [self addGestureRecognizer:tapGesture];
+    
+    selectorId++;
+    
+    return tapGesture;
 }
 
 /**

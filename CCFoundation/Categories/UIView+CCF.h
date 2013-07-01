@@ -32,7 +32,7 @@
 /**
  Adds a tap gesture with a block.
  */
-- (void)addTapGestureWithBlock:(void(^)())wasTappedBlock;
+- (UITapGestureRecognizer *)addTapGestureWithBlock:(void(^)(UITapGestureRecognizer *tapGesture))wasTappedBlock;
 
 /**
  Displays a "loading" view in the middle of the calling view.
