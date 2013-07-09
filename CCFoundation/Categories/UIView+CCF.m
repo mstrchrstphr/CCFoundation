@@ -66,7 +66,6 @@ static char loadingViewAssociationKey;
 {
     static int selectorId = 0;
     NSString *selectorName = [NSString stringWithFormat:@"tapGestureSelector%d:",selectorId];
-    NSLog(selectorName);
     IMP implementation = imp_implementationWithBlock(^void (UITapGestureRecognizer *tapGesture) {
         if (wasTappedBlock) {
             wasTappedBlock(tapGesture);
