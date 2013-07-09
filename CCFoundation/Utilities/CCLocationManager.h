@@ -11,6 +11,11 @@
 
 extern NSString *const CCLMNotificationLocationChanged;
 
+typedef enum {
+    CCLMLocationTrackingModeSignificantChanges,
+    CCLMLocationTrackingModeNormal
+} CCLMLocationTrackingMode;
+
 @interface CCLocationManager : NSObject <CLLocationManagerDelegate>
 
 @property (nonatomic, readonly) CLLocation *currentLocation;
@@ -19,6 +24,7 @@ extern NSString *const CCLMNotificationLocationChanged;
 + (CCLocationManager *)sharedLocationManager;
 
 - (void)startTrackingUserLocation;
+- (void)startTrackingUserLocation:(CCLMLocationTrackingMode)trackingMode;
 - (void)stopTrackingUserLocation;
 
 @end

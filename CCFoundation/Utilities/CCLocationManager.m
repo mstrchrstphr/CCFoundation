@@ -28,6 +28,11 @@ NSString *const CCLMNotificationLocationChanged = @"CCLM:LocationChangedNotifica
 
 - (void)startTrackingUserLocation
 {
+    [self startTrackingUserLocation:CCLMLocationTrackingModeSignificantChanges];
+}
+
+- (void)startTrackingUserLocation:(CCLMLocationTrackingMode)trackingMode
+{
     if ([CLLocationManager locationServicesEnabled] == NO) {
         return;
     }
@@ -39,8 +44,14 @@ NSString *const CCLMNotificationLocationChanged = @"CCLM:LocationChangedNotifica
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         self.locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
     }
-
-    [self.locationManager startMonitoringSignificantLocationChanges];
+    
+    if (trackingMode == CCLMLocationTrackingModeSignificantChanges) {
+        [self.locationManager startMonitoringSignificantLocationChanges];
+    }
+    else {
+        [self.locationManager startUpdatingLocation];
+        [self.locationManager startUpdatingHeading];
+    }
     
     // Set initial location if available
     CLLocation *currentLocation = self.locationManager.location;
