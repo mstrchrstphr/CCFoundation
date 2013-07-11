@@ -20,6 +20,11 @@
 - (NSString *)decrementIntegerValue;
 
 /**
+ Doesn't crash if the string is nil.
+ */
+- (NSRange)safeRangeOfString:(NSString *)string;
+
+/**
  Returns the hex value of the string.
  */
 - (unsigned int)hexValue;

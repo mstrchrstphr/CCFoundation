@@ -23,6 +23,16 @@
     return [NSString stringWithFormat:@"%d", integerValue];
 }
 
+- (NSRange)safeRangeOfString:(NSString *)string
+{
+    if (!string.length) {
+        return NSMakeRange(0, 0);
+    }
+    else {
+        return [self rangeOfString:string];
+    }
+}
+
 - (unsigned int)hexValue
 {
     unsigned int hexResult = 0;
