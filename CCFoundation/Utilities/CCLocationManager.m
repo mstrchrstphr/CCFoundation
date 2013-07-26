@@ -81,19 +81,15 @@ NSString *const CCLMNotificationLocationChanged = @"CCLM:LocationChangedNotifica
 }
 
 - (void)locationManager:(CLLocationManager *)manager
-    didUpdateToLocation:(CLLocation *)newLocation
-           fromLocation:(CLLocation *)oldLocation
+     didUpdateLocations:(NSArray *)locations
 {
-    // Throw out old locations
-    if ([newLocation.timestamp timeIntervalSinceNow] < -60) return;
-    
     if (self.currentLocation) {
         _previousLocation = self.currentLocation;
     }
-    self.currentLocation = newLocation;
+    self.currentLocation = [locations lastObject];
     NSLog(@"CCLocationManager got new location: latitude %+.6f, longitude %+.6f\n",
-          newLocation.coordinate.latitude,
-          newLocation.coordinate.longitude);
+          self.currentLocation.coordinate.latitude,
+          self.currentLocation.coordinate.longitude);
 }
 
 @end
