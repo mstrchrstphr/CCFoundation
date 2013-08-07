@@ -169,35 +169,39 @@ static char loadingViewAssociationKey;
 
 - (void)fadeOutWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock
 {
-    [UIView animateWithDuration:fadeInterval
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.alpha = 0.0;
-                     }
-                     completion:^(BOOL finished) {
-                         self.hidden = YES;
-                         if (completionBlock) {
-                             completionBlock();
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:fadeInterval
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.alpha = 0.0;
                          }
-                     }];
+                         completion:^(BOOL finished) {
+                             self.hidden = YES;
+                             if (completionBlock) {
+                                 completionBlock();
+                             }
+                         }];
+    });
 }
 
 - (void)fadeInWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock
 {
-    self.alpha = 0.0;
-    self.hidden = NO;
-    [UIView animateWithDuration:fadeInterval
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         self.alpha = 1.0;
-                     }
-                     completion:^(BOOL finished) {
-                         if (completionBlock) {
-                             completionBlock();
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.alpha = 0.0;
+        self.hidden = NO;
+        [UIView animateWithDuration:fadeInterval
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveLinear
+                         animations:^{
+                             self.alpha = 1.0;
                          }
-                     }];
+                         completion:^(BOOL finished) {
+                             if (completionBlock) {
+                                 completionBlock();
+                             }
+                         }];
+    });
 }
 
 - (void)setFrameX:(CGFloat)xVal
