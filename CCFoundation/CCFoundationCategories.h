@@ -25,3 +25,4 @@
 #import "MKMapView+CCF.h"
 #import "UIViewController+CCF.h"
 #import "UINavigationController+CCF.h"
+#import "UITableView+CCF.h"
