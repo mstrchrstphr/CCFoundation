@@ -15,6 +15,7 @@
 #import "NSString+CCF.h"
 #import "UIBarButtonItem+CCF.h"
 #import "UIColor+CCF.h"
+#import "UIImage+CCF.h"
 #import "UIImageView+CCF.h"
 #import "UILabel+CCF.h"
 #import "UITextView+CCF.h"
