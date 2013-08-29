@@ -13,6 +13,7 @@
 #import "NSData+CCF.h"
 #import "NSDate+CCF.h"
 #import "NSString+CCF.h"
+#import "NSString+CCF_Crypto.h"
 #import "UIBarButtonItem+CCF.h"
 #import "UIColor+CCF.h"
 #import "UIImage+CCF.h"
