@@ -9,6 +9,6 @@
 
 /** If either the key or the value is invalid or nil, nil will be returned. */
 - (id)safeValueForKey:(NSString *)key;
-- (id)safeStringForKey:(NSString *)key;
+- (NSString *)safeStringForKey:(NSString *)key;
 
 @end

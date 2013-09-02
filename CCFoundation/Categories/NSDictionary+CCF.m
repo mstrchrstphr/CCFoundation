@@ -19,7 +19,7 @@
     }
 }
 
-- (id)safeStringForKey:(NSString *)key
+- (NSString *)safeStringForKey:(NSString *)key
 {
     NSString *string = [self safeValueForKey:key];
     if ((string == nil) || [string isKindOfClass:[NSNull class]]) {
