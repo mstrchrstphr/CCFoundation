@@ -9,6 +9,7 @@
 
 @interface NSDate (CCF)
 
+- (NSString *)shortTime;
 - (NSString *)timeAgo;
 
 @end

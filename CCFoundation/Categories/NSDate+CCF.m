@@ -9,6 +9,13 @@
 
 @implementation NSDate (CCF)
 
+- (NSString *)shortTime
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"HH:mm a";
+    return [dateFormatter stringFromDate:self];
+}
+
 - (NSString *) timeAgo {
     NSDate *now = [NSDate date];
     double deltaSeconds = fabs([self timeIntervalSinceDate:now]);
