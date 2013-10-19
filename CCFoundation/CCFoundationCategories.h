@@ -28,3 +28,4 @@
 #import "UIViewController+CCF.h"
 #import "UINavigationController+CCF.h"
 #import "UITableView+CCF.h"
+#import "NSOperation+CCF.h"
