@@ -16,4 +16,7 @@
 /** Random pastel (lighter) UIColor */
 + (UIColor *)randomPastelColor;
 
+/** Random blue value */
++ (UIColor *)randomBlueColor;
+
 @end
