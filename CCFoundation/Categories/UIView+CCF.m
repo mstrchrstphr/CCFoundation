@@ -125,7 +125,7 @@ static char loadingViewAssociationKey;
         [self addSubview:loadingView];
         [UIView animateWithDuration:0.35
                               delay:0.0
-                            options:UIViewAnimationCurveEaseIn
+                            options:UIViewAnimationOptionCurveEaseIn
                          animations:^{
                              loadingView.alpha = 1.0;
                          }
@@ -146,7 +146,7 @@ static char loadingViewAssociationKey;
         dispatch_async(dispatch_get_main_queue(), ^{
             [UIView animateWithDuration:0.35
                                   delay:0.0
-                                options:UIViewAnimationCurveEaseIn
+                                options:UIViewAnimationOptionCurveEaseIn
                              animations:^{
                                  loadingView.alpha = 0.0;
                              }
@@ -254,11 +254,12 @@ static char loadingViewAssociationKey;
     [self dimTheLightsWithOpacity:0.4];
 }
 
+static NSInteger kDimmerTag = 9587498; // random tag
 - (void)dimTheLightsWithOpacity:(CGFloat)opacity
 {
     __block UIView *dimmer = [[UIView alloc] initWithFrame:self.bounds];
     dimmer.userInteractionEnabled = NO;
-    dimmer.tag = 80139587498; // random tag
+    dimmer.tag = kDimmerTag;
     dimmer.backgroundColor = [UIColor blackColor];
     dimmer.alpha = 0.0;
     [self addSubview:dimmer];
@@ -274,7 +275,7 @@ static char loadingViewAssociationKey;
 
 - (void)turnTheLightsBackOn
 {
-    __block UIView *dimmer = [self viewWithTag:80139587498];
+    __block UIView *dimmer = [self viewWithTag:kDimmerTag];
     if (dimmer) {
         [UIView animateWithDuration:0.3
                               delay:0.0
