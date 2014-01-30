@@ -20,7 +20,6 @@
 		743454D2187A03E8009889D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743454B1187A03E8009889D3 /* Foundation.framework */; };
 		743454D3187A03E8009889D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743454B5187A03E8009889D3 /* UIKit.framework */; };
 		743454DB187A03E8009889D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 743454D9187A03E8009889D3 /* InfoPlist.strings */; };
-		743454DD187A03E8009889D3 /* CCFoundationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 743454DC187A03E8009889D3 /* CCFoundationDemoTests.m */; };
 		7434551E187A03FB009889D3 /* MKMapView+CCF.m in Sources */ = {isa = PBXBuildFile; fileRef = 743454E9187A03FB009889D3 /* MKMapView+CCF.m */; };
 		7434551F187A03FB009889D3 /* NSArray+CCF.m in Sources */ = {isa = PBXBuildFile; fileRef = 743454EB187A03FB009889D3 /* NSArray+CCF.m */; };
 		74345520187A03FB009889D3 /* NSData+CCF.m in Sources */ = {isa = PBXBuildFile; fileRef = 743454ED187A03FB009889D3 /* NSData+CCF.m */; };
@@ -46,6 +45,7 @@
 		74345534187A03FB009889D3 /* CCDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 74345519187A03FB009889D3 /* CCDevice.m */; };
 		74345535187A03FB009889D3 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7434551B187A03FB009889D3 /* CCLocationManager.m */; };
 		74345536187A03FB009889D3 /* CCUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7434551D187A03FB009889D3 /* CCUnitConverter.m */; };
+		747474FB1899D2CE0097BC45 /* NSArray+CCFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 747474FA1899D2CE0097BC45 /* NSArray+CCFTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +77,6 @@
 		743454D0187A03E8009889D3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		743454D8187A03E8009889D3 /* CCFoundationDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CCFoundationDemoTests-Info.plist"; sourceTree = "<group>"; };
 		743454DA187A03E8009889D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		743454DC187A03E8009889D3 /* CCFoundationDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCFoundationDemoTests.m; sourceTree = "<group>"; };
 		743454E8187A03FB009889D3 /* MKMapView+CCF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+CCF.h"; sourceTree = "<group>"; };
 		743454E9187A03FB009889D3 /* MKMapView+CCF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+CCF.m"; sourceTree = "<group>"; };
 		743454EA187A03FB009889D3 /* NSArray+CCF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CCF.h"; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		7434551B187A03FB009889D3 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		7434551C187A03FB009889D3 /* CCUnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUnitConverter.h; sourceTree = "<group>"; };
 		7434551D187A03FB009889D3 /* CCUnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUnitConverter.m; sourceTree = "<group>"; };
+		747474FA1899D2CE0097BC45 /* NSArray+CCFTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CCFTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,8 +216,8 @@
 		743454D6187A03E8009889D3 /* CCFoundationDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				743454DC187A03E8009889D3 /* CCFoundationDemoTests.m */,
 				743454D7187A03E8009889D3 /* Supporting Files */,
+				747474FA1899D2CE0097BC45 /* NSArray+CCFTests.m */,
 			);
 			path = CCFoundationDemoTests;
 			sourceTree = "<group>";
@@ -439,7 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				743454DD187A03E8009889D3 /* CCFoundationDemoTests.m in Sources */,
+				747474FB1899D2CE0097BC45 /* NSArray+CCFTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +640,7 @@
 				743454E2187A03E8009889D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		743454E3187A03E8009889D3 /* Build configuration list for PBXNativeTarget "CCFoundationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -648,6 +649,7 @@
 				743454E5187A03E8009889D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
