@@ -11,5 +11,6 @@
 @interface UIImage (CCF)
 
 - (UIImage *)scaleToWidth:(CGFloat)newWidth;
+- (UIImage *)blurredImage;
 
 @end
