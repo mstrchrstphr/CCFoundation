@@ -47,6 +47,7 @@
 		74345536187A03FB009889D3 /* CCUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7434551D187A03FB009889D3 /* CCUnitConverter.m */; };
 		747474FB1899D2CE0097BC45 /* NSArray+CCFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 747474FA1899D2CE0097BC45 /* NSArray+CCFTests.m */; };
 		7498BFD918A3139700FA7772 /* NSString+CCF_Web.m in Sources */ = {isa = PBXBuildFile; fileRef = 7498BFD818A3139700FA7772 /* NSString+CCF_Web.m */; };
+		7498BFDB18A3147F00FA7772 /* NSString+CCFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7498BFDA18A3147F00FA7772 /* NSString+CCFTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		747474FA1899D2CE0097BC45 /* NSArray+CCFTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CCFTests.m"; sourceTree = "<group>"; };
 		7498BFD718A3139700FA7772 /* NSString+CCF_Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCF_Web.h"; sourceTree = "<group>"; };
 		7498BFD818A3139700FA7772 /* NSString+CCF_Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCF_Web.m"; sourceTree = "<group>"; };
+		7498BFDA18A3147F00FA7772 /* NSString+CCFTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCFTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 			children = (
 				743454D7187A03E8009889D3 /* Supporting Files */,
 				747474FA1899D2CE0097BC45 /* NSArray+CCFTests.m */,
+				7498BFDA18A3147F00FA7772 /* NSString+CCFTests.m */,
 			);
 			path = CCFoundationDemoTests;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7498BFDB18A3147F00FA7772 /* NSString+CCFTests.m in Sources */,
 				747474FB1899D2CE0097BC45 /* NSArray+CCFTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
