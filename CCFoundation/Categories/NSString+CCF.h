@@ -50,21 +50,6 @@
  Given some bytes returns something like 102.95 KB or 5.0 GB. Rounds to two decimal places.
  */
 + (NSString *)stringRepresentationOfNumberOfBytes:(uint64_t)numOfBytes;
-- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
-
-/**
- Returns a dictionary of parameters parsed from the URL of the current string.
- NOTE: only the string should only be query/path should and not the full
- url.
- */
-- (NSDictionary *)dictionaryFromURLParameters;
-
-/**
- *  Strips the receiving string of any HTML tags.
- *
- *  @return A string with all HTML tags stripped out.
- */
-- (NSString *)stringByStrippingHTMLTags;
 
 /**
  Converts "programmer" view controller names to "non-programmer" name.

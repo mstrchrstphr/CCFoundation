@@ -46,6 +46,7 @@
 		74345535187A03FB009889D3 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7434551B187A03FB009889D3 /* CCLocationManager.m */; };
 		74345536187A03FB009889D3 /* CCUnitConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7434551D187A03FB009889D3 /* CCUnitConverter.m */; };
 		747474FB1899D2CE0097BC45 /* NSArray+CCFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 747474FA1899D2CE0097BC45 /* NSArray+CCFTests.m */; };
+		7498BFD918A3139700FA7772 /* NSString+CCF_Web.m in Sources */ = {isa = PBXBuildFile; fileRef = 7498BFD818A3139700FA7772 /* NSString+CCF_Web.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		7434551C187A03FB009889D3 /* CCUnitConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUnitConverter.h; sourceTree = "<group>"; };
 		7434551D187A03FB009889D3 /* CCUnitConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUnitConverter.m; sourceTree = "<group>"; };
 		747474FA1899D2CE0097BC45 /* NSArray+CCFTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CCFTests.m"; sourceTree = "<group>"; };
+		7498BFD718A3139700FA7772 /* NSString+CCF_Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CCF_Web.h"; sourceTree = "<group>"; };
+		7498BFD818A3139700FA7772 /* NSString+CCF_Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CCF_Web.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +266,8 @@
 				743454F5187A03FB009889D3 /* NSOperation+CCF.m */,
 				743454F6187A03FB009889D3 /* NSString+CCF.h */,
 				743454F7187A03FB009889D3 /* NSString+CCF.m */,
+				7498BFD718A3139700FA7772 /* NSString+CCF_Web.h */,
+				7498BFD818A3139700FA7772 /* NSString+CCF_Web.m */,
 				743454F8187A03FB009889D3 /* NSString+CCF_Crypto.h */,
 				743454F9187A03FB009889D3 /* NSString+CCF_Crypto.m */,
 				743454FA187A03FB009889D3 /* UIBarButtonItem+CCF.h */,
@@ -416,6 +421,7 @@
 				74345535187A03FB009889D3 /* CCLocationManager.m in Sources */,
 				7434552B187A03FB009889D3 /* UIImageView+CCF.m in Sources */,
 				74345521187A03FB009889D3 /* NSDate+CCF.m in Sources */,
+				7498BFD918A3139700FA7772 /* NSString+CCF_Web.m in Sources */,
 				74345525187A03FB009889D3 /* NSString+CCF.m in Sources */,
 				74345524187A03FB009889D3 /* NSOperation+CCF.m in Sources */,
 				74345534187A03FB009889D3 /* CCDevice.m in Sources */,
