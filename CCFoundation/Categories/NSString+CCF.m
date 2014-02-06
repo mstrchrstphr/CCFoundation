@@ -153,6 +153,19 @@
     return params;
 }
 
+- (NSString *)stringByStrippingHTMLTags
+{
+    NSData *stringData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *attributes = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                 NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)};
+    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:stringData
+                                                                            options:attributes
+                                                                 documentAttributes:nil
+                                                                              error:nil];
+    
+    return [attributedString string];
+}
+
 - (NSString *)humanReadableViewControllerName
 {
     NSString *originalNameSanitized = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

@@ -60,6 +60,13 @@
 - (NSDictionary *)dictionaryFromURLParameters;
 
 /**
+ *  Strips the receiving string of any HTML tags.
+ *
+ *  @return A string with all HTML tags stripped out.
+ */
+- (NSString *)stringByStrippingHTMLTags;
+
+/**
  Converts "programmer" view controller names to "non-programmer" name.
  e.g. "HomeViewController" to "Home Screen"
  */
