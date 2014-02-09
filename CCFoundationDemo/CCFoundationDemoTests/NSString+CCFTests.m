@@ -8,6 +8,10 @@
 
 #import <XCTest/XCTest.h>
 
+#import "NSString+CCF.h"
+#import "NSString+CCF_Web.h"
+#import "NSString+CCF_Crypto.h"
+
 @interface NSString_CCFTests : XCTestCase
 
 @end
@@ -26,9 +30,23 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testStrippingHTMLFromStringReturnsValidString
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSString *htmlSnippet = @"<html><body><p>hello there</p> <p>goodbye now!</p></body></html>";
+    NSString *plainString = [htmlSnippet stringByStrippingHTMLTags];
+    
+    XCTAssertNotNil(plainString, @"Stripping HTML from a string should not remove textual content.");
+    XCTAssert(plainString.length > 0, @"Stripping HTML from a string should not remove textual content.");
+}
+
+- (void)testCanStripHTMLFromString
+{
+    NSString *htmlSnippet = @"<html><body><p>hello there</p> <p>goodbye now!</p></body></html>";
+    NSString *plainString = [htmlSnippet stringByStrippingHTMLTags];
+    
+    XCTAssertFalse([plainString containsString:@"html"], @"The string should not contain any HTML tags");
+    XCTAssertFalse([plainString containsString:@"body"], @"The string should not contain any HTML tags");
+    XCTAssertFalse([plainString containsString:@"<p>"], @"The string should not contain any HTML tags");
 }
 
 @end
