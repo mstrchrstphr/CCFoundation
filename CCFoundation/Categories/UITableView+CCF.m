@@ -10,6 +10,17 @@
 
 @implementation UITableView (CCF)
 
+- (void)scrollToTop
+{
+    [self scrollToTop:YES];
+}
+
+- (void)scrollToTop:(BOOL)animated
+{
+    [self scrollRectToVisible:CGRectMake(0, 0, 1, 1)
+                     animated:animated];
+}
+
 - (void)scrollToFirstRowInSection:(NSInteger)section
                          animated:(BOOL)animated
 {
