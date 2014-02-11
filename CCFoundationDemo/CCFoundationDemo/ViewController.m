@@ -24,6 +24,14 @@
     self.secondsToTimeLabel.text = @"2531";
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    NSLog(@"Here's this view controller's responder chain:");
+    NSLog(@"%@", [self responderChainDescription]);
+}
+
 - (IBAction)emailAddressChanged:(id)sender {
     NSString *isValidEmailString = @"NOT VALID";
     BOOL isValidEmail = [self.emailValidTextField.text isValidEmail];
