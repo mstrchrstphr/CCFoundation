@@ -35,4 +35,28 @@
     [CATransaction commit];
 }
 
+- (void)zoomInFromScale:(CGFloat)scale
+           withInterval:(CFTimeInterval)interval
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(scale, scale, 1.0)];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    [animation setDuration:interval];
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    [self addAnimation:animation forKey:@"zoomIn"];
+}
+
+- (void)zoomOutToScale:(CGFloat)scale
+          withInterval:(CFTimeInterval)interval
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    animation.fromValue = [NSValue valueWithCATransform3D:self.transform];
+    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(scale, scale, 1.0)];
+    [animation setDuration:interval];
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    [self addAnimation:animation forKey:@"zoomOut"];
+}
+
 @end

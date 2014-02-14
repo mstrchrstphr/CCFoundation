@@ -12,4 +12,7 @@
 - (void)fadeOutWithInterval:(CFTimeInterval)interval completion:(void (^)(void))completion;
 - (void)fadeInWithInterval:(CFTimeInterval)interval completion:(void (^)(void))completion;
 
+- (void)zoomInFromScale:(CGFloat)scale withInterval:(CFTimeInterval)interval;
+- (void)zoomOutToScale:(CGFloat)scale withInterval:(CFTimeInterval)interval;
+
 @end
