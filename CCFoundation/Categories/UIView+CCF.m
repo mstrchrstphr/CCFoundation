@@ -129,7 +129,7 @@ static char loadingViewAssociationKey;
                          animations:^{
                              loadingView.alpha = 1.0;
                          }
-                         completion:NULL
+                         completion:nil
          ];
     });
 }
@@ -169,7 +169,7 @@ static char loadingViewAssociationKey;
     self.layer.shadowRadius   = 3.0;
 }
 
-- (void)fadeOutWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock
+- (void)fadeOutWithInterval:(NSTimeInterval)fadeInterval completionBlock:(void(^)(void))completionBlock;
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:fadeInterval
@@ -187,7 +187,7 @@ static char loadingViewAssociationKey;
     });
 }
 
-- (void)fadeInWithInterval:(CGFloat)fadeInterval andCompletionBlock:(void(^)())completionBlock
+- (void)fadeInWithInterval:(NSTimeInterval)fadeInterval completionBlock:(void(^)(void))completionBlock;
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         self.alpha = 0.0;
