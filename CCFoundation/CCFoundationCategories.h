@@ -31,3 +31,5 @@
 #import "UITableView+CCF.h"
 #import "NSOperation+CCF.h"
 #import "UIResponder+CCF.h"
+
+#import "CALayer+CCF.h"
