@@ -11,7 +11,7 @@
  Replacement for the default "tag" property of UIView. Allows for
  an arbitrary object to be set as the tag.
  */
-@property (nonatomic, retain) id tagObject;
+@property (strong, nonatomic) id tagObject;
 
 /**
  Retrieves the first view whose tag object matches the parameter.
