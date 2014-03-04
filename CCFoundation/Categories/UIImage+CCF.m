@@ -10,6 +10,19 @@
 
 @implementation UIImage (CCF)
 
++ (UIImage *)imageFromView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, [UIScreen mainScreen].scale);
+    
+    [view drawViewHierarchyInRect:view.bounds
+               afterScreenUpdates:YES];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 - (UIImage *)scaleToWidth:(CGFloat)newWidth
 {
     float oldWidth = self.size.width;
